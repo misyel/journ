@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    div(class='listHeader')
+        h1= title
+        a(href='/journal/mood/create') add mood
+
+    div(class='row')
+        each mood in moods
+            div(class='card')
+                div(class='cardCenter')
+                    a(href=mood.url) #{mood.feeling}
+        else
+            p no moods.

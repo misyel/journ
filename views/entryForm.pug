@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    div(class='bigDiv')
+        div(class='center')
+            h1 #{title}
+            form(method='POST' action='')
+                label(for='title') title:
+                input(id='title' type='text' required='true' name='title' value=(underfined===entry ? '': entry.title))
+                label(for='note') note:
+                input(id='note' type='text' required='true' name='note' value=(underfined===entry ? '': entry.note))
+                label(for='firstName') first name:
+                input(id='firstName' type='text' required='true' name='firstName' value=(underfined===entry ? '': entry.author.firstName))
+                label(for='lastName') last name:
+                input(id='lastName' type='text' required='true' name='lastName' value=(underfined===entry ? '': entry.author.lastName))
+                button(type='submit') submit
+
+            if errors 
+                ul
+                    for error in errors
+                        li!= error.msg

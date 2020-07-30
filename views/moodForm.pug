@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+    div(class='bigDiv')
+        div(class='center')
+            h1= title
+            p(class='formQuote') celebrate the highs. treasure the lows.
+
+            form(method='POST' action='')
+                label(for='feeling') feeling:
+                input(id='feeling' type='text' required='true' name='feeling' value=(underfined===mood ? '': mood.feeling))
+                label(for='description') description:
+                input(id='description' type='text' required='true' name='description' value=(underfined===mood ? '': mood.description))
+                label(for='firstName') first name:
+                input(id='firstName' type='text' required='true' name='firstName' value=(underfined===mood ? '': mood.author.firstName))
+                label(for='lastName') last name:
+                input(id='lastName' type='text' required='true' name='lastName' value=(underfined===mood ? '': mood.author.lastName))
+                button(type='submit') submit
+
+            if errors 
+                ul
+                    for error in errors
+                        li!= error.msg

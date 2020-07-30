@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    div(class='wrapper')
+        div(class='title bigDiv')
+            h1(class='center entryTitle') #{result.feeling}
+        div(class='right-entry')
+            div(class='right-center')
+                p by 
+                    a(href=result.author.url) #{result.author.firstName}
+                p #{result.description}
+                a(href=result.url+'/edit') update 
+                span / 
+                a(href=result.url+'/delete') delete

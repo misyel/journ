@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+    div(class="wrapper")
+        article(class='entry')
+            div(class='left-center')
+
+                h3 entries:
+                ul
+                    each entry in authorEntries
+                        li  
+                            a(href=entry.url) #{entry.title}
+                    else
+                        p author has no entries
+                h3 moods:
+                ul 
+                    each mood in authorMoods
+                        li  
+                            a(href=mood.url) #{mood.feeling}
+                    else
+                        p no moods.
+        div(class='bigDiv title')
+            h1(class='center author') #{author.firstName} #{author.lastName}
+            

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= title
+    ul
+        each author in authors
+            li
+                a(href=author.url) #{author.firstName} #{author.lastName}
+        else
+            li there are no authors.

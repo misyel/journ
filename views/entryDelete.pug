@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+    div(class='bigDiv')
+        div(class='center')
+            h1 #{title}: #{entry.title}
+
+            p Do you really want to delete this entry?
+
+            form(method='POST' action='')
+                input(type='hidden' name='entryid', required='true' value=entry._id)
+                button(type='submit') delete

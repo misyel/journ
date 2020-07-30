@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+    h1= title
+
+    form(method='POST' action='')
+        label(for='firstName') first name:
+        input(id='firstName' type='text' required='true' value=(underfined===author ? '': author.firstName))
+        label(for='lastName') first name:
+        input(id='lastName' type='text' required='true' value=(underfined===author ? '': author.lastName))
+        button(type='submit') submit
+
+    if errors 
+        ul
+            for error in errors
+                li!= error.msg

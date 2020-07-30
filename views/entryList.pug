@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    div(class='listHeader')
+        h1= title
+        a(href='/journal/entry/create') add entry
+    
+    div(class="row")
+        each entry in entries
+            div(class="card") 
+                div(class='cardCenter')
+                    a(href=entry.url) #{entry.title}  
+        else 
+            p no entries.

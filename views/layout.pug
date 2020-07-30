@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    title journ
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Varela')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon', href='https://pngimg.com/uploads/letter_j/letter_j_PNG29.png')
+  body
+
+    header  
+      nav
+        span(class='navBarToggle' id="jsNavBarToggle")
+          i(class='fa fa-bars')
+        ul(class='navBar' id='js-menu')
+          li
+            a(class="navLink" href='/') home
+          li
+            a(class="navLink" href='/about') about
+          li
+            a(class="navLink" href='/journal/entries') entries
+          li 
+            a(class="navLink" href='/journal/moods') moods
+    block content
+    script(type='text/javascript' src='/javascripts/index.js')
